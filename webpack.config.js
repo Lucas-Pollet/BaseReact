@@ -12,7 +12,12 @@ module.exports = {
         new HtmlWebpackPlugin({title: 'MyApp'})
     ],
     module: {
-        rules: [{
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
             test: /.jsx?$/,
             exclude: /node_modules/,
             use: {
